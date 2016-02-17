@@ -24,6 +24,7 @@ complete application skeleton with all you need
     2. [own server with apache](#own-server-with-apache)
     3. [heroku](#heroku)
     4. [other](#other)
+5. [Dependencies](#dependencies)
 
 ## Getting started
 ### download Source
@@ -67,3 +68,5 @@ complete application skeleton with all you need
 ### own server with apache
 ### heroku
 ### other
+
+## Dependencies

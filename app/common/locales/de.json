@@ -1,0 +1,11 @@
+{
+	"error": {
+		"title": "Fehler",
+		"subtitle": "Oops. Da ist wohl was schief gegangen :(",
+		"message": "error.message",
+		"stack": "error.stack"
+	},
+	"application": {
+		"config": "application.config"
+	}
+}

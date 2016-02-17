@@ -1,0 +1,7 @@
+# app/assets/vendor/.gitignore
+
+# Ignore everything here
+*
+
+# Except this file
+!.gitignore

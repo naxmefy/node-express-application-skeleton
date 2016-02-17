@@ -1,0 +1,18 @@
+html
+    head
+        !=css('error.css')
+
+    body
+        #error
+            h1= __('error.title')
+            p= __('error.subtitle')
+
+        if config.development
+            h2= __('error.message')
+            pre: code= error.message
+
+            h2= __('error.stack')
+            pre: code #{error.stack}
+
+            h2= __('application.config')
+            pre: code= JSON.stringify(config, null, 2)
