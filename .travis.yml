@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "5.6"
+
+
+services:
+  - mongodb
+
+before_script:
+  # - npm install -g <your coverage push tool like coveralls>
+
+script:
+  - npm run test-cov
+
+after_script:
+  # - cat ./coverage/lcov.info | <your coverage push tool like coveralls>

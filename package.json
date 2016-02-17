@@ -1,0 +1,37 @@
+{
+  "name": "app-name",
+  "version": "0.1.0",
+  "description": "my app description",
+  "private": true,
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "dev": "node_modules/.bin/nodemon app/index.js",
+    "test": "node_modules/.bin/mocha test",
+    "test-cov": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://your-git-url.com"
+  },
+  "keywords": [
+    "my app keywords"
+  ],
+  "engines": {
+    "node": "5.6"
+  },
+  "author": "your name, username or company name",
+  "license": "your license",
+  "bugs": {
+    "url": "https://your-issues-url.com"
+  },
+  "homepage": "https://your-homepage-url.com",
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.8.1",
+    "should": "^8.2.2",
+    "supertest": "^1.2.0"
+  }
+}

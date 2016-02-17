@@ -1,0 +1,51 @@
+# Language setting
+language: node_js
+
+# Version number
+node_js:
+  - 5.6
+
+# build image
+build_image: node:$SHIPPABLE_NODE_VERSION
+
+services:
+  - mongodb
+
+env:
+  global:
+    - NODE_ENV=test
+    - XUNIT_FILE=shippable/testresults/result.xml
+    - MONGOLAB_URI=mongodb://localhost/test
+
+before_install:
+  # - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
+  - node --version
+  - npm install -g istanbul
+  - npm install xunit-file
+
+install:
+  - npm install
+
+script:
+  - npm run test-cov -- -- -R xunit-file
+
+# Tell istanbul to generate a coverage report
+after_script:
+  - istanbul report cobertura --dir shippable/codecoverage/
+
+# include
+branches:
+  only:
+    - master
+    - staging
+    - development
+    - feature/*
+    - hotfix/*
+
+# email notifications
+notifications:
+  email:
+    recipients:
+    #  - john.doe@example.com
+    on_success: change
+    on_failure: always
