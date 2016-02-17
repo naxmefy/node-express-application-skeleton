@@ -6,7 +6,7 @@ node_js:
   - 5.6
 
 # build image
-build_image: node:$SHIPPABLE_NODE_VERSION
+build_image: node:5.6.0
 
 services:
   - mongodb
