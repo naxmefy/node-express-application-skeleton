@@ -12,7 +12,9 @@ complete application skeleton with all you need
 ### Shippable
 
 **shippable api**
+
 [![shippable status](https://api.shippable.com/projects/56c4a2ef1895ca4474744564/badge/master)](https://app.shippable.com/builds/56c4a2ef1895ca4474744564)
 
 **shields.io**
+
 [![shippable status](https://img.shields.io/shippable/56c4a2ef1895ca4474744564.svg)](https://app.shippable.com/builds/56c4a2ef1895ca4474744564)
