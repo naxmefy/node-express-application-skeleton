@@ -10,7 +10,6 @@ module.exports = function(application) {
 
     // App Config ...
     frontend.set('views', path.resolve(__dirname, "views"));
-    frontend.set('view engine', 'jade');
 
     // App Routes
     frontend.get("/", homeController.index);
