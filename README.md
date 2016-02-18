@@ -52,6 +52,7 @@ But it is only first skeleton!
     * simple web application which communicates with the api (OAuth2)
     * single page application (powered with mincer asset pipeline) which communicates with the api (JWT)
     * simple ionic mobile application which communicates with the api (jwt)
+    * simple ionic mobile application which communicates with the api (oauth2)
     
 ### What is included here?
 
