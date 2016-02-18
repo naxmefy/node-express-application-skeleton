@@ -1,6 +1,6 @@
 // Fixed navbar
 nav.navbar.navbar-default.navbar-fixed-top
-    .container-fluid
+    .container-fluid.f16
         .navbar-header
             button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
                 span.sr-only Toggle navigation
@@ -13,6 +13,18 @@ nav.navbar.navbar-default.navbar-fixed-top
                 li(ui-sref-active="active")
                     a(ui-sref="app.dashboard") Dashboard
             ul.nav.navbar-nav.navbar-right
+                li.dropdown
+                    a.dropdown-toggle(href="", data-toggle="dropdown")
+                        i.flag(ng-class="flagClass")
+                        !=" "
+                        | {{ 'common.set_locale' | i18n }}
+                        b.caret
+                    ul.dropdown-menu
+                        li(ng-repeat="lang in supportedLangs")
+                            a(href="", ng-click="setLocale(lang)")
+                                i.flag(ng-class="localeData[lang].flagClass")
+                                !=" "
+                                span {{ localeData[lang].langDisplayText }}
                 li(ui-sref-active="active")
                     a(ui-sref="public.auth.login") Sign In
                 li(ui-sref-active="active")

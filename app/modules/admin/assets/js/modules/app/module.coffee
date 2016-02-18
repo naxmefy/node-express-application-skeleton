@@ -1,7 +1,10 @@
-#= require ./templates/layout.jst.jade
-
 #= require ./modules/dashboard/module
 #= require ./modules/account/module
+
+#= require_self
+
+#= require_tree ./templates
+#= require_tree ./controllers
 
 angular.module 'admin.app', [
     'admin.app.dashboard'
@@ -16,5 +19,6 @@ angular.module 'admin.app', [
             url: ""
             abstract: true
             template: JST["modules/app/templates/layout"]
+            controller: 'LayoutController'
 
 ]
