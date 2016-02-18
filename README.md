@@ -3,6 +3,7 @@ complete application skeleton with all you need
 
 ## Table of Contents
 
+0. [Introduction](#introduction)
 1. [Getting started](#getting-started)
     1. [download Source](#download-source)
     2. [change application name](#change-application-name)
@@ -25,6 +26,32 @@ complete application skeleton with all you need
     3. [heroku](#heroku)
     4. [other](#other)
 5. [Dependencies](#dependencies)
+
+## Introduction
+
+This skeleton can you give a good starting point to create an amazing big application (>O_O)>.
+
+It contains:
+
+* Root Application (Express)
+* Sub Modules (Each an express application)
+* Each Sub Module his own features like:
+    * api (JWT Authentication - CRUD Resources etc.)
+    * admin (Angular Application - modularized structure etc)
+    * frontend (Simple Server Side Rendering - like a CMS etc)
+    
+But it is only first skeleton!
+
+**upcomming in another repo**
+
+* splitted application system to seperate areas in:
+    * standalone api with ClientAuth (accessToken), JWT and OAuth2 authentication
+    * node package library that can be used to communicate with api
+    * angular services collection to communicate with api
+    * simple app which communicates with api (ClientAuth)
+    * simple web application which communicates with the api (OAuth2)
+    * single page application (powered with mincer asset pipeline) which communicates with the api (JWT)
+    * simple ionic mobile application which communicates with the api (jwt)
 
 ## Getting started
 ### download Source
