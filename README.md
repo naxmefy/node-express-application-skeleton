@@ -69,6 +69,20 @@ We got:
 * Angular App with nice modularized structure
 * Angular App with I18N Support
 * Angular App with UI Router - nice for multiple nested views etc.
+* **not implemented yet** Unit Tests for server application parts
+* **not implemented yet** Integation Tests for server applications parts and requests
+* **not implemented yet** Unit- / Integration Tests for assets
+* **not implemented yet** E2E Tests for Frontend Applications / -Views
+* **not implemented yet** Passport Authentication for Frontend (Works with Session and support social auth services like facebook etc)
+* **not implemented yet** API JWT Authentication
+* **not implemented yet** Angular App Authentication with API via JWT
+* **not implemented yet** User Permissions (simple acl)
+* **not implemented yet** payment strategies
+* **not implemented yet** file upload and handling with local file store, S3 and cloudinary
+* **not implemented yet** Logging and ErrorHandling with Sentry and/or Papertrail
+* **not implemented yet** Action History per Model per User
+* **not implemented yet** Mongoose Migrations
+* **not implemented yet** Clustering
 
 ## Getting started
 ### download Source
