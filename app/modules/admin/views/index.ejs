@@ -1,0 +1,19 @@
+<html ng-app="admin">
+    <head>
+        <title><%= config.pkg.name %></title>
+        <base href="/admin/"/>
+
+        <!-- Styles -->
+        <%- css('admin.css') %>
+    </head>
+
+    <body>
+        <div ui-view></div>
+
+        <!-- Scripts -->
+        <%- js('admin.js') %>
+
+        <!-- LiveReload Script -->
+        <%- LRScript %>
+    </body>
+</html>

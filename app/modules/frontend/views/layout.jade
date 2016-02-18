@@ -5,8 +5,12 @@ html
         block styles
         block scripts
 
-        // LRScript
-        script(src=LRScript)
+
 
     body
+        block header
         block content
+        block footer
+
+        // LiveReload Script
+        != LRScript

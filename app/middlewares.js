@@ -8,7 +8,6 @@ const i18n = require('i18n');
 const morgan = require('morgan');
 const serveFavicon = require('serve-favicon');
 const ConnectMincer = require('connect-mincer');
-const liveReload = require('livereload');
 
 const sockets = require('./sockets');
 const errorHandler = require('./common/middlewares/error-handler');
@@ -56,19 +55,7 @@ module.exports = function (application) {
 
     // Development Config
     if (application.config.development) {
-        application.liveReloadServer = liveReload.createServer(_.merge({}, application.config.livereload));
-        var watch = application.config.livereload.watch;
-        application.utils.array.add(watch, application.get('views')+"/*");
-        _.forEach(application.modules, function(module) {
-            application.utils.array.add(watch, module.get('views'));
-        });
-        application.utils.array.add(watch, application.config.assets.paths, p => path.resolve(application.config.assets.root, p));
-        application.log.info("LiveReload enabled.\nWatching:", watch);
-        application.liveReloadServer.watch(watch);
-        application.use((req, res, next) => {
-            res.locals.LRScript = application.config.livereload.script();
-            next();
-        });
+        application.utils.livereload(application);
     }
 
     // use modules

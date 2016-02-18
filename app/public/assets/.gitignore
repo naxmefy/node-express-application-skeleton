@@ -1,0 +1,7 @@
+# app/public/assets/.gitignore
+
+# Ignore everything here
+*
+
+# Except this file
+!.gitignore

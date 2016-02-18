@@ -55,6 +55,14 @@ module.exports = {
     },
 
     modules: {
+        admin: {
+            mountPath: "/admin",
+            appPath: path.resolve(__dirname, "modules", "admin")
+        },
+        api: {
+            mountPath: "/api",
+            appPath: path.resolve(__dirname, "modules", "api")
+        },
         frontend: {
             mountPath: "/",
             appPath: path.resolve(__dirname, "modules", "frontend")
@@ -101,7 +109,10 @@ module.exports = {
         manifestFile: __dirname + "/public/assets/manifest.json",
         paths: [
             'common/assets/css',
-            'common/assets/vendor'
+            'common/assets/vendor',
+
+            'modules/admin/assets/css',
+            'modules/admin/assets/js'
         ]
     },
 
@@ -111,6 +122,9 @@ module.exports = {
             // Your targeted ASSETS which required the whole rest like bootstrap etc.
             "error.css",
             "font-fix.css",
+
+            "admin.css",
+            "admin.js",
 
             // IMAGES AND FONTS
             '*.eot',
