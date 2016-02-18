@@ -42,7 +42,7 @@ It contains:
     
 But it is only first skeleton!
 
-**upcomming in another repo**
+**upcomming in another repos**
 
 * splitted application system to seperate areas in:
     * standalone api with ClientAuth (accessToken), JWT and OAuth2 authentication
