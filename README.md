@@ -52,6 +52,23 @@ But it is only first skeleton!
     * simple web application which communicates with the api (OAuth2)
     * single page application (powered with mincer asset pipeline) which communicates with the api (JWT)
     * simple ionic mobile application which communicates with the api (jwt)
+    
+### What is included here?
+
+We got:
+
+* express applications
+* mongoose database with models
+* mincer asset pipeline (supports nearly every asset format, building, plugins, etc like Sass, Less, PostCSS, Coffee, Babel, etc
+* LiveReload Support for Development
+* Nodemon Support for Development
+* Example module for server side rendered views (for cms -> SEO reasons etc)
+* example module for an api (simple, dry, crud etc)
+* I18N Support on Server Side (for error messages, server side renderes views, responses, etc)
+* Angular Application
+* Angular App with nice modularized structure
+* Angular App with I18N Support
+* Angular App with UI Router - nice for multiple nested views etc.
 
 ## Getting started
 ### download Source
