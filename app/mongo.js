@@ -25,7 +25,13 @@ module.exports = function (application, done) {
 
     });
 
-    mongoose.connect(application.config.mongo.uri, application.config.mongo.options, done);
+    mongoose.connect(application.config.mongo.uri, application.config.mongo.options, function(err) {
+        if(err) {
+            application.log.error(err);
+        }
+
+        done();
+    });
 };
 
 // Close the Mongoose connection, when receiving SIGINT
