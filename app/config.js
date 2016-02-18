@@ -71,6 +71,7 @@ module.exports = {
         watch: [
             // views and assets paths are automatically merged later
         ],
+        debug: process.env.NODE_ENV === 'development',
         exts: [
             'js',
             'coffee',
@@ -109,6 +110,7 @@ module.exports = {
         files: [
             // Your targeted ASSETS which required the whole rest like bootstrap etc.
             "error.css",
+            "font-fix.css",
 
             // IMAGES AND FONTS
             '*.eot',

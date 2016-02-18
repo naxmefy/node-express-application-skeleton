@@ -5,8 +5,12 @@
   "private": true,
   "main": "app/index.js",
   "scripts": {
-    "start": "node app/index.js",
     "dev": "node_modules/.bin/nodemon app/index.js",
+    "build-assets": "npm run load-assets && npm run precompile-assets",
+    "load-assets": "node_modules/.bin/bower install",
+    "precompile-assets": "node scripts/precompile-assets.js",
+    "postinstall": "npm run build-assets",
+    "start": "node app/index.js",
     "test": "node_modules/.bin/mocha test",
     "test-cov": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha test"
   },
@@ -29,6 +33,7 @@
   "dependencies": {
     "async": "^1.5.2",
     "body-parser": "^1.15.0",
+    "bower": "^1.7.7",
     "bunyan": "^1.6.0",
     "bunyan-prettystream": "^0.1.3",
     "coffee-script": "^1.10.0",

@@ -19,6 +19,10 @@ indent_size = 4
 [*]
 trim_trailing_whitespace = true
 
+# except .json
+[*.json]
+indent_size = 2
+
 # except .md
 [*.md]
 trim_trailing_whitespace = false

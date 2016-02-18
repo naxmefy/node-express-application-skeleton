@@ -41,6 +41,7 @@ module.exports = function (application) {
 
     // res wide locals (will also put to modules - res.locals)
     application.use((req, res, next) => {
+        res.locals.pretty = application.config.development;
         res.locals.config = application.config;
 
         next();
@@ -51,6 +52,27 @@ module.exports = function (application) {
     _.forEach(application.config.modules, function (module, key) {
         application.log.info("Load Module:", key);
         application.modules[key] = require(module.appPath)(application);
+    });
+
+    // Development Config
+    if (application.config.development) {
+        application.liveReloadServer = liveReload.createServer(_.merge({}, application.config.livereload));
+        var watch = application.config.livereload.watch;
+        application.utils.array.add(watch, application.get('views')+"/*");
+        _.forEach(application.modules, function(module) {
+            application.utils.array.add(watch, module.get('views'));
+        });
+        application.utils.array.add(watch, application.config.assets.paths, p => path.resolve(application.config.assets.root, p));
+        application.log.info("LiveReload enabled.\nWatching:", watch);
+        application.liveReloadServer.watch(watch);
+        application.use((req, res, next) => {
+            res.locals.LRScript = application.config.livereload.script();
+            next();
+        });
+    }
+
+    // use modules
+    _.forEach(application.config.modules, (module, key) => {
         application.use(module.mountPath, application.modules[key]);
     });
 
@@ -60,19 +82,4 @@ module.exports = function (application) {
     // error handler
     application.use(errorHandler.notFound);
     application.use(errorHandler.error);
-
-    // Development Config
-    if (application.config.development) {
-        application.liveReloadServer = liveReload.createServer(_.merge({}, application.config.livereload));
-        var watch = application.config.livereload.watch;
-        application.utils.array.add(watch, application.get('views'));
-        _.forEach(application.modules, function(module) {
-            application.utils.array.add(watch, module.get('views'));
-        });
-        application.utils.array.add(watch, application.config.assets.paths, p => path.resolve(application.config.assets.root, p));
-        application.log.info("LiveReload enabled.\nWatching:", watch);
-        application.liveReloadServer.watch(watch);
-
-        application.locals.LRScript = `<script>document.write("<script src='${application.config.livereload.script()}'></script>")</script>`
-    }
 };

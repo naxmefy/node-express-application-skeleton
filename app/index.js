@@ -40,7 +40,7 @@ application.start = function (customConfig, done) {
 
     // set env state
     application.config.test = application.config.env === 'test';
-    application.config.development = true; //application.config.env === 'development';
+    application.config.development = application.config.env === 'development';
     application.config.production = application.config.env === 'production';
 
     // Log
