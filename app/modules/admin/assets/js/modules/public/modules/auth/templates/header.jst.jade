@@ -1,0 +1,23 @@
+// Fixed navbar
+nav.navbar.navbar-default.navbar-fixed-top
+    .container-fluid
+        .navbar-header
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(ui-sref="app.dashboard") Admin Login
+        #navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav
+                li(ui-sref-active="active")
+                    a(ui-sref="app.dashboard") Dashboard
+            ul.nav.navbar-nav.navbar-right
+                li(ui-sref-active="active")
+                    a(ui-sref="public.auth.login") Sign In
+                li(ui-sref-active="active")
+                    a(ui-sref="public.auth.forgot_password") Forgot Password?
+                li(ui-sref-active="active")
+                    a(ui-sref="app.account") My Account
+                li(ui-sref-active="active")
+                    a(ui-sref="public.auth.logout") Sign Out

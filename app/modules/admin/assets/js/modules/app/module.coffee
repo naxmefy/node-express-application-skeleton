@@ -1,4 +1,4 @@
-#= require ./layout.jst.jade
+#= require ./templates/layout.jst.jade
 
 #= require ./modules/dashboard/module
 #= require ./modules/account/module
@@ -15,6 +15,6 @@ angular.module 'admin.app', [
         .state 'app',
             url: ""
             abstract: true
-            template: JST["modules/app/layout"]
+            template: JST["modules/app/templates/layout"]
 
 ]

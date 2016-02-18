@@ -1,4 +1,4 @@
-#= require ./layout.jst.jade
+#= require ./templates/layout.jst.jade
 
 #= require ./modules/auth/module
 
@@ -13,6 +13,6 @@ angular.module 'admin.public', [
         .state 'public',
             url: ""
             abstract: true
-            template: JST["modules/public/layout"]
+            template: JST["modules/public/templates/layout"]
 
 ]
